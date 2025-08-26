@@ -140,6 +140,7 @@
     NSNumber *width = ![config objectForKey:@"width"]?@"48" : [config objectForKey:@"width"];
     NSNumber *height = ![config objectForKey:@"height"]?@"80" : [config objectForKey:@"height"];
     NSNumber *gap = ![config objectForKey:@"gap"]?@"2" : [config objectForKey:@"gap"];
+    NSNumber *imageWidth = ![config objectForKey:@"imageWidth"]?@"420" : [config objectForKey:@"imageWidth"];
     
     TscCommand *command = [[TscCommand alloc]init];
     // 设置标签尺寸宽高，按照实际尺寸设置 单位mm
@@ -171,7 +172,7 @@
         }else if([@"image" isEqualToString:type]){
             NSData *decodeData = [[NSData alloc] initWithBase64EncodedString:content options:0];
             UIImage *image = [UIImage imageWithData:decodeData];
-            [command addBitmapwithX:[x intValue] withY:[y intValue] withMode:0 withWidth:300 withImage:image];
+            [command addBitmapwithX:[x intValue] withY:[y intValue] withMode:0 withWidth:imageWidth withImage:image];
         }
        
     }
@@ -235,7 +236,7 @@
         }else if([@"image" isEqualToString:type]){
             NSData *decodeData = [[NSData alloc] initWithBase64EncodedString:content options:0];
             UIImage *image = [UIImage imageWithData:decodeData];
-            [command addOriginrastBitImage:image width:576];
+            [command addOriginrastBitImage:image width:0];
         }
         
         if([linefeed isEqualToNumber:@1]){

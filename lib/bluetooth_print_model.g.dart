@@ -39,12 +39,11 @@ LineText _$LineTextFromJson(Map<String, dynamic> json) {
     weight: json['weight'] as int?,
     width: json['width'] as int?,
     height: json['height'] as int?,
-    absolutePos: json['absolutePos'] as int?,
-    relativePos: json['relativePos'] as int?,
     fontZoom: json['fontZoom'] as int?,
     underline: json['underline'] as int?,
     linefeed: json['linefeed'] as int?,
     x: json['x'] as int?,
+    relativeX: json['relativeX'] as int?,
     y: json['y'] as int?,
   );
 }
@@ -65,12 +64,11 @@ Map<String, dynamic> _$LineTextToJson(LineText instance) {
   writeNotNull('weight', instance.weight);
   writeNotNull('width', instance.width);
   writeNotNull('height', instance.height);
-  writeNotNull('absolutePos', instance.absolutePos);
-  writeNotNull('relativePos', instance.relativePos);
   writeNotNull('fontZoom', instance.fontZoom);
   writeNotNull('underline', instance.underline);
   writeNotNull('linefeed', instance.linefeed);
   writeNotNull('x', instance.x);
+  writeNotNull('relativeX', instance.relativeX);
   writeNotNull('y', instance.y);
   return val;
 }

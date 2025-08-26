@@ -26,12 +26,11 @@ class LineText {
       this.weight = 0, //0,1
       this.width = 0, //0,1
       this.height = 0, //0,1
-      this.absolutePos = 0,
-      this.relativePos = 0,
       this.fontZoom = 1,
       this.underline = 0, //0,1
       this.linefeed = 0, //0,1
       this.x = 0,
+      this.relativeX = 0,
       this.y = 0});
 
   static const String TYPE_TEXT = 'text';
@@ -59,13 +58,7 @@ class LineText {
   final int? width;
   final int? height;
 
-  /// ['text'] absolute position from line begin
-  final int? absolutePos;
-
-  /// ['text'] relative position from last content
-  final int? relativePos;
-
-  /// ['text'] font zoom level, include 1-8
+  /// ['text'] font zoom level, 1 normal, >1 double size
   final int? fontZoom;
 
   /// ['text'] show underline
@@ -74,7 +67,11 @@ class LineText {
   /// ['text'] print linebreak
   final int? linefeed;
 
+  /// ['text'] absolute position from line begin
   final int? x;
+  /// ['text'] relative position from last content
+  final int? relativeX;
+
   final int? y;
 
   factory LineText.fromJson(Map<String, dynamic> json) =>

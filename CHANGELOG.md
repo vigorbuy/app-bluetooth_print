@@ -1,3 +1,8 @@
+
+## 4.3.0
+* opt LineText
+* merge pull request
+
 ## 4.2.0
 
 * opt permission check
